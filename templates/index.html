@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Analytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Student Performance Analytics System</h1>
+
+<h3>Total Students: {{ total }}</h3>
+<h3>Top Student: {{ top }}</h3>
+<h3>Highest Percentage: {{ highest_percentage }}%</h3>
+<h3>Average Percentage: {{ average_percentage }}%</h3>
+<h2>📊 Student Performance Report Card</h2>
+<form method="GET">
+    <input type="text" name="search" placeholder="Enter Student Name">
+    <button type="submit">Search</button>
+    <a href="/">
+    <button type="button">Show All Students</button>
+</a>
+
+    <a href="/download" class="download-btn">Download CSV</a>
+    <a href="/graph">
+    <button type="button">View Graph</button>
+</a>
+</form>
+
+<br>
+
+<table border="1" style="margin:auto; border-collapse:collapse;">
+    <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Math</th>
+        <th>Science</th>
+        <th>English</th>
+        <th>Social Science</th>
+        <th>Hindi</th>
+        <th>Total</th>
+        <th>Percentage</th>
+        <th>Grade</th>
+        <th>Status</th>
+    </tr>
+
+    {% for student in ranking %}
+
+<tr {% if student[9] == 1 %}class="top-rank"{% endif %}>
+<td>{{ student[10] }}</td>   <!-- Rank -->
+<td>{{ student[0] }}</td>   <!-- Name -->
+<td>{{ student[1] }}</td>   <!-- Math -->
+<td>{{ student[2] }}</td>   <!-- Science -->
+<td>{{ student[3] }}</td>   <!-- English -->
+<td>{{ student[4] }}</td>   <!-- Social Science -->
+<td>{{ student[5] }}</td>   <!-- Hindi -->
+<td>{{ student[6] }}</td>   <!-- Total -->
+<td>{{ student[7] }}%</td>  <!-- Percentage -->
+<td>{{ student[8] }}</td>   <!-- Grade -->
+<td>{{ student[9] }}</td>  <!-- Status -->
+    </tr>
+    {% endfor %}
+</table>
+</div>
+<hr>
+
+<p style="text-align:center;">
+Developed by Sushma | Student report card...2026
+</p>
+</body>
+</html>
