@@ -104,8 +104,3 @@ Add project screenshots here after uploading images.
 
 **Sushma**
 
-BCA Student | Python Developer | Data Analytics Enthusiast
-
-## ⭐ Support
-
-If you like this project, give it a ⭐ on GitHub.
