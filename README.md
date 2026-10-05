@@ -60,7 +60,7 @@ student-analytics/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/student-analytics.git
+git clone https://github.com/sushmajha525-byte/student-analytics.git
 ```
 
 ### Navigate to Project Folder
